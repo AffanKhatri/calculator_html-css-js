@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculator</title>
+    <script>
+         function ClearScreen(){
+            document.getElementById("result").value="";
+         }
+
+         function display_box(value){
+            document.getElementById("result").value += value;
+         }
+         function calculate(){
+            var i = document.getElementById("result").value;
+            var r = eval(i);
+            document.getElementById("result").value = r;
+         }
+    </script>
+    <style>
+        h1{
+            font-family: Cambria;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .display{
+            background-color: lime;
+            color: black;
+            border: 5px;
+            border-color: silver;
+            border-style: groove;
+        }
+
+        #btn{
+            background-color: lightblue;
+            border: 3px;
+            border-style: double;
+        }
+        
+        table{
+            border: 10px;
+            border-style: ridge;
+        }
+
+        input[type="button"]{
+            background-color: gold;
+            color: black;
+            font-size: 125%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+</head>
+
+<body>
+    <h1 align="center"> Simple Calculator </h1>
+    <table align="center">
+        <tr>
+            <td colspan="3"><input class="display" id="result" type="text" disabled></td>
+            <td><input type="button" value="C"  id="btn" onclick="ClearScreen()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="display_box('7')"></td>
+            <td><input type="button" value="8" onclick="display_box('8')"></td>
+            <td><input type="button" value="9" onclick="display_box('9')"></td>
+            <td><input type="button" value="/" onclick="display_box('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="display_box('4')"></td>
+            <td><input type="button" value="5" onclick="display_box('5')"></td>
+            <td><input type="button" value="6" onclick="display_box('6')"></td>
+            <td><input type="button" value="*" onclick="display_box('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="display_box('1')"></td>
+            <td><input type="button" value="2" onclick="display_box('2')"></td>
+            <td><input type="button" value="3" onclick="display_box('3')"></td>
+            <td><input type="button" value="-" onclick="display_box('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="display_box('.')"></td>
+            <td><input type="button" value="0" onclick="display_box('0')"></td>
+            <td><input type="button" value="+" onclick="display_box('+')"></td>
+            <td><input type="button" value="%" onclick="display_box('%')"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="button" value="=" id="btn" onclick="calculate()"></td>
+        </tr>
+    </table>
+</body>
+</html>
